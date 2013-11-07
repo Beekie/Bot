@@ -905,7 +905,7 @@ botMethods.djAdvanceEvent = function(data){
  
  
     botMethods.loadStorage();
-    console.log("/me : Rá´‡á´…sá´›á´É´á´‡Ê€ Script version " + mubBot.misc.version +", Reporting For DUTY!");
+    console.log("/me : Beekie's bot Script version " + mubBot.misc.version +", Reporting For DUTY!");
  
     setTimeout(function(){
         $.getScript('');
