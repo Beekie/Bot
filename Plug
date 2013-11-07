@@ -217,6 +217,20 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
                         break;
+                        
+                    case "pong":
+                        if(typeof command[1] == "undefined"){
+                            API.sendChat("The command is !ping");
+                        }else if(command[1].indexOf("@") > -1){
+                            API.sendChat(command[1]+" The command is !ping");
+                        }else{
+                            API.sendChat("The command is !ping");
+                        }
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
                        
                     case "wiki":
                         if(typeof command[1] == "undefined"){
