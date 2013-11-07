@@ -10,7 +10,7 @@ toSave = {};
 toSave.settings = mubBot.settings;
 toSave.moderators = mubBot.moderators;
  
-mubBot.misc.version = "2.0.26";
+mubBot.misc.version = "2.0.25";
 mubBot.misc.origin = "This bot was created by Redstoner and DJ-Neon alone, and it is copyrighted!";
 mubBot.misc.changelog = "Added a secondary check for history";
 mubBot.misc.ready = true;
@@ -905,7 +905,7 @@ botMethods.djAdvanceEvent = function(data){
  
  
     botMethods.loadStorage();
-    console.log("/me : Beekie's bot Script version " + mubBot.misc.version +", Reporting For DUTY!");
+    console.log("/me : Rá´‡á´…sá´›á´É´á´‡Ê€ Script version " + mubBot.misc.version +", Reporting For DUTY!");
  
     setTimeout(function(){
         $.getScript('');
@@ -917,4 +917,4 @@ botMethods.djAdvanceEvent = function(data){
         });
     }, 3000);
  
-    API.sendChat('/me : Beekie's bot Script '+mubBot.misc.version+", Reporting For Duty!")
+    API.sendChat('/me : Rá´‡á´…sá´›á´É´á´‡Ê€ Script '+mubBot.misc.version+", Reporting For Duty!")
