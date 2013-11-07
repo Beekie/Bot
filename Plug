@@ -917,4 +917,4 @@ botMethods.djAdvanceEvent = function(data){
         });
     }, 3000);
  
-    API.sendChat('/me : Rá´‡á´…sá´›á´É´á´‡Ê€ Script '+mubBot.misc.version+", Reporting For Duty!")
+    API.sendChat('/me : Bot Script '+mubBot.misc.version+", Reporting For Duty!")
