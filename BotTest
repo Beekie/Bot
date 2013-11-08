@@ -17,7 +17,7 @@ mubBot.misc.ready = true;
 mubBot.misc.lockSkipping = false;
 mubBot.misc.lockSkipped = "0";
 mubBot.misc.tacos = new Array();
-mubBot.misc.commands = "!commands = This text." /n "!ping = PONG!" /n "!authors = The author." /n " !pong = Just try it." /n "!songlink = A link to the current playing song."
+mubBot.misc.commands = "!commands !ping !authors !pong !songlink"
  
 joined = new Date().getTime();
  
