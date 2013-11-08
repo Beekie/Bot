@@ -17,7 +17,7 @@ mubBot.misc.ready = true;
 mubBot.misc.lockSkipping = false;
 mubBot.misc.lockSkipped = "0";
 mubBot.misc.tacos = new Array();
-mubBot.misc.commands = "!commands = This text."
+mubBot.misc.commands = #FFD700 "!commands = This text."
  
 joined = new Date().getTime();
  
