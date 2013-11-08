@@ -236,7 +236,6 @@ botMethods.djAdvanceEvent = function(data){
 					case "commands":
                         if(typeof command[1] == "undefined"){
                             API.sendChat(mubBot.misc.commands);
-							var result = str.bold();
                         }else if(command[1].indexOf("@") > -1){
                             API.sendChat(command[1]+ mubBot.misc.commands);
                         }else{
