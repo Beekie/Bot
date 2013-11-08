@@ -10,13 +10,14 @@ toSave = {};
 toSave.settings = mubBot.settings;
 toSave.moderators = mubBot.moderators;
  
-mubBot.misc.version = "2.0.25";
-mubBot.misc.origin = "This bot was created by Redstoner and DJ-Neon alone, and it is copyrighted!";
+mubBot.misc.version = "2.1.0";
+mubBot.misc.origin = "This bot is made by Neon and modified by DJ Beekie";
 mubBot.misc.changelog = "Added a secondary check for history";
 mubBot.misc.ready = true;
 mubBot.misc.lockSkipping = false;
 mubBot.misc.lockSkipped = "0";
 mubBot.misc.tacos = new Array();
+mubBot.misc.commands = "!commands !ping !authors !pong !songlink !source"
  
 joined = new Date().getTime();
  
@@ -120,7 +121,7 @@ botMethods.djAdvanceEvent = function(data){
     var song = API.getMedia();
     if(botMethods.checkHistory() > 0 && mubBot.settings.historyFilter){
         if(API.getUser().permission < 2){
-            API.sendChat("This song is in the history! You should make me a mod so that I could skip it!");
+            API.sendChat("This song is in the history!");
         }else if(API.getUser().permission > 1){
             API.sendChat("@" + API.getDJs()[0].username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
             botMethods.skip()
@@ -217,6 +218,34 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
                         break;
+                        
+                    case "pong":
+                        if(typeof command[1] == "undefined"){
+                            API.sendChat("The command is !ping");
+                        }else if(command[1].indexOf("@") > -1){
+                            API.sendChat(command[1]+" The command is !ping");
+                        }else{
+                            API.sendChat("The command is !ping");
+                        }
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+					
+					case "commands":
+                        if(typeof command[1] == "undefined"){
+                            API.sendChat(mubBot.misc.commands);
+                        }else if(command[1].indexOf("@") > -1){
+                            API.sendChat(command[1]+ mubBot.misc.commands);
+                        }else{
+                            API.sendChat(mubBot.misc.commands);
+                        }
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
                        
                     case "wiki":
                         if(typeof command[1] == "undefined"){
@@ -301,7 +330,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
  
                     case "source":
-                        API.sendChat("@"+data.from+ " http://goo.gl/bsvbY8");
+                        API.sendChat("@"+data.from+ " https://github.com/Beekie/Bot/blob/master/Bot.md");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -442,7 +471,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
  
                     case "version":
-                        API.sendChat("RedstonerBot  version " + mubBot.misc.version);
+                        API.sendChat("Running on version " + mubBot.misc.version);
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -837,7 +866,7 @@ botMethods.djAdvanceEvent = function(data){
                 }
             }
             if(msg.indexOf(':notamused:') > -1){
-                API.sendChat('/me : à² _à² ');
+                API.sendChat('/me : à² _à² ');
                 if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                     mubBot.misc.ready = false;
                     setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
@@ -917,4 +946,4 @@ botMethods.djAdvanceEvent = function(data){
         });
     }, 3000);
  
-    API.sendChat('/me : Rá´‡á´…sá´›á´É´á´‡Ê€ Script '+mubBot.misc.version+", Reporting For Duty!")
+    API.sendChat('/me : Here I am DJ Beekie! Running on version '+mubBot.misc.version+"")
