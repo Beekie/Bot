@@ -797,9 +797,9 @@ botMethods.djAdvanceEvent = function(data){
                     case '7':
                         API.sendChat('Playing Video/season/Movies and Un-English songs, that has no effort, are subject to being skipped.');
                         break;
-					case '':
-						API.sendChat('Type: !rule [1-7] ');
-						break;
+                    case '':
+			API.sendChat('Type: !rule [1-7] ');
+			break;
                     default:
                         API.sendChat('Unknown rule!');
                         break;
