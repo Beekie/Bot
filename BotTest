@@ -18,10 +18,10 @@ mubBot.misc.lockSkipping = false;
 mubBot.misc.lockSkipped = "0";
 mubBot.misc.tacos = new Array();
 mubBot.misc.commands = "!commands = This text.
-!ping = PONG!
-!authors = The author.
-!pong = Just try it.
-!songlink = A link to the current playing song."
+			!ping = PONG!
+			!authors = The author.
+			!pong = Just try it.
+			!songlink = A link to the current playing song."
  
 joined = new Date().getTime();
  
