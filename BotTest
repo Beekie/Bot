@@ -17,6 +17,7 @@ mubBot.misc.ready = true;
 mubBot.misc.lockSkipping = false;
 mubBot.misc.lockSkipped = "0";
 mubBot.misc.tacos = new Array();
+mubBot.misc.commands = "!commands = This text."
  
 joined = new Date().getTime();
  
@@ -225,6 +226,20 @@ botMethods.djAdvanceEvent = function(data){
                             API.sendChat(command[1]+" The command is !ping");
                         }else{
                             API.sendChat("The command is !ping");
+                        }
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+					
+					case "commands":
+                        if(typeof command[1] == "undefined"){
+                            API.sendChat(mubBot.misc.commands);
+                        }else if(command[1].indexOf("@") > -1){
+                            API.sendChat(command[1]+ mubBot.misc.commands);
+                        }else{
+                            API.sendChat(mubBot.misc.commands);
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
