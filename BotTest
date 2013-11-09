@@ -17,7 +17,7 @@ mubBot.misc.ready = true;
 mubBot.misc.lockSkipping = false;
 mubBot.misc.lockSkipped = "0";
 mubBot.misc.tacos = new Array();
-mubBot.misc.commands = "The commands are: !commands !ping !authors !pong !songlink !source"
+mubBot.misc.commands = "Commands: !commands, !ping, !authors, !pong, !songlink, !source"
  
 joined = new Date().getTime();
  
@@ -233,7 +233,7 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                                         
-                                        case "commands":
+                     case "commands":
                         if(typeof command[1] == "undefined"){
                             API.sendChat(mubBot.misc.commands);
                         }else if(command[1].indexOf("@") > -1){
