@@ -17,7 +17,7 @@ mubBot.misc.ready = true;
 mubBot.misc.lockSkipping = false;
 mubBot.misc.lockSkipped = "0";
 mubBot.misc.tacos = new Array();
-mubBot.misc.commands = "!ping !authors !pong !songlink !source"
+mubBot.misc.commands = "The commands are: !commands !ping !authors !pong !songlink !source"
  
 joined = new Date().getTime();
  
