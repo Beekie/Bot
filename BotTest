@@ -37,7 +37,7 @@ mubBot.settings.beggerFilter = true;
 mubBot.settings.interactive = true;
 mubBot.settings.removedFilter = true;
  
-//JS              	[DJ-NEON]                  [DJ Beekie]
+//JS                      [DJ-NEON]                  [DJ Beekie]
 mubBot.admins = ["50aeaeb6c3b97a2cb4c25bd2", "526a8f633b7903143d9e78af"];
  
 mubBot.filters.swearWords = ["slut","mofo","penis","penus","fuck","shit","bitch","cunt","twat","faggot","queer","dumbass","pussy","dick","cocksucker","asshole","vagina","tit","mangina","tits","cock","jerk","puta","puto","cum","sperm"];
@@ -232,8 +232,8 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
                         break;
-					
-					case "commands":
+                                        
+                                        case "commands":
                         if(typeof command[1] == "undefined"){
                             API.sendChat(mubBot.misc.commands);
                         }else if(command[1].indexOf("@") > -1){
@@ -353,14 +353,14 @@ botMethods.djAdvanceEvent = function(data){
             }
             if(mubBot.misc.ready || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
                 switch(command[0].toLowerCase()){
-                    
+                    /* commented out because the bot isn't running on a dedicated bot account
                      case "meh":
                      if(API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1) $("#button-vote-negative").click();
                      break;
  
                      case "woot":
                      if(API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1)  $("#button-vote-positive").click();
-                     break;
+                     break;*/
  
                     case "say":
                     if(API.getUser(data.fromID).permission > 1){
