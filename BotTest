@@ -361,6 +361,14 @@ botMethods.djAdvanceEvent = function(data){
                      case "woot":
                      if(API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1)  $("#button-vote-positive").click();
                      break;
+                     
+                     case "join":
+                     if(API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1)  $("#button-dj-play").click();
+                     break;
+                     
+                     case "unjoin":
+                     if(API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1)  $("#button-dj-quit").click();
+                     break;
  
                     case "say":
                     if(API.getUser(data.fromID).permission > 1){
