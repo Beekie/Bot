@@ -363,11 +363,11 @@ botMethods.djAdvanceEvent = function(data){
                      break;
                      
                      case "join":
-                     if(API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1)  $("#button-dj-play").click();
+                     if(mubBot.admins.indexOf(fromID) > -1)  $("#button-dj-play").click();
                      break;
                      
                      case "unjoin":
-                     if(API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1)  $("#button-dj-quit").click();
+                     if(mubBot.admins.indexOf(fromID) > -1)  API.djLeave();
                      break;
  
                     case "say":
